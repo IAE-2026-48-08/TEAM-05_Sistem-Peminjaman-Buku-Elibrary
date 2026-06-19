@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:iae="http://iae.central/audit">
+    <soap:Body>
+        <iae:AuditRequest>
+            <iae:TeamID>TEAM-05</iae:TeamID>
+            <iae:ActivityName>BookCreated</iae:ActivityName>
+            <iae:LogContent><![CDATA[
+{"book_id":1,"title":"Laskar Pelangi"}
+            ]]></iae:LogContent>
+        </iae:AuditRequest>
+    </soap:Body>
+</soap:Envelope>

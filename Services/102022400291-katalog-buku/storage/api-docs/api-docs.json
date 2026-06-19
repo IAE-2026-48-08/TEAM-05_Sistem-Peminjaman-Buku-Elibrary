@@ -1,0 +1,104 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Katalog Buku API",
+        "description": "Service 1 Katalog Buku",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/catalog/books": {
+            "get": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Get all books",
+                "operationId": "31b0f1ce58c8ffc46aa025be2d0f108a",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Create book",
+                "operationId": "186934354510807507afc6c00b176984",
+                "responses": {
+                    "201": {
+                        "description": "Book created"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/v1/catalog/books/{id}": {
+            "get": {
+                "tags": [
+                    "Books"
+                ],
+                "summary": "Get book by ID",
+                "operationId": "19c5ce13d0cb61ae4ca7b5481c81264c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Buku",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "name": "X-IAE-KEY",
+                "in": "header"
+            },
+            "securityDefinitions": {
+                "securitySchemes": {
+                    "bearerAuth": {
+                        "type": "apiKey",
+                        "description": "Enter token in format (Bearer <token>)",
+                        "name": "Authorization",
+                        "in": "header"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Books",
+            "description": "API Katalog Buku"
+        }
+    ]
+}

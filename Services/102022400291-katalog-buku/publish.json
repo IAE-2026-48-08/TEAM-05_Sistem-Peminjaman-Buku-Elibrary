@@ -1,0 +1,8 @@
+{
+  "exchange": "iae.central.exchange",
+  "message": {
+    "event": "book.created",
+    "book_id": 1,
+    "title": "Laskar Pelangi"
+  }
+}

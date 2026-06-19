@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Katalog Buku API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/catalog/books": {
+      "get": {
+        "summary": "Get all books"
+      },
+      "post": {
+        "summary": "Create new book"
+      }
+    },
+    "/api/v1/catalog/books/{id}": {
+      "get": {
+        "summary": "Get book by id"
+      }
+    }
+  }
+}
