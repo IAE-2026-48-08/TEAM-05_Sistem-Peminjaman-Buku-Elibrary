@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use OpenApi\Attributes as OA;
 use App\Services\SoapAuditService;
 use App\Services\RabbitMqService;
+use App\Services\MemberService;
 
 #[OA\Tag(
     name: "Books",
@@ -100,4 +101,21 @@ public function store(Request $request)
         "data" => $request->all()
     ], 201);
 }
+
+    public function booksForMember($memberId)
+    {
+        $member = MemberService::getStatus($memberId);
+
+        if (
+            !isset($member['data']['status']) ||
+            $member['data']['status'] !== 'active'
+        ) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Member tidak aktif'
+            ], 403);
+        }
+
+        return response()->json($this->books);
+    }
 }

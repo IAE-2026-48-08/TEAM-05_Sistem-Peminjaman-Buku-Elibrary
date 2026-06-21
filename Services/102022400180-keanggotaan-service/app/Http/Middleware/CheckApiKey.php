@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Response\ApiResponse;
+use App\Http\Responses\ApiResponse;
 use Closure;
 use Illuminate\Http\Request;
 

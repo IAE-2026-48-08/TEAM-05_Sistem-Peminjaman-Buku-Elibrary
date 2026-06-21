@@ -7,5 +7,5 @@ Route::middleware('apikey')->group(function () {
 Route::get('/v1/catalog/books', [BookController::class, 'index']);
 Route::get('/v1/catalog/books/{id}', [BookController::class, 'show']);
 Route::post('/v1/catalog/books', [BookController::class, 'store']);
-
+Route::get('/catalog/member/{memberId}/books',[BookController::class, 'booksForMember']);
 });
