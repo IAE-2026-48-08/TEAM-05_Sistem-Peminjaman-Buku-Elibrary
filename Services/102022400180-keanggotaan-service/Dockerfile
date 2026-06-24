@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libsqlite3-dev \
-    && docker-php-ext-install pdo pdo_sqlite pcntl
+    && docker-php-ext-install pdo pdo_sqlite pcntl bcmath sockets
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
